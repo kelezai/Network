@@ -1,0 +1,977 @@
+<mxfile host="65bd71144e">
+    <diagram id="qva5lI1gL0r869U4JP1v" name="第 1 页">
+        <mxGraphModel dx="2901" dy="1162" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value=":EventLoop" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="70" width="100" height="960" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="2" vertex="1">
+                    <mxGeometry x="45" y="220" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="创建 task_event_fd&lt;br&gt;eventffd" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="2" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50" y="200" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="2" vertex="1">
+                    <mxGeometry x="45" y="310" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="创建 timer_fd_&lt;br&gt;timerfd_create" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="2" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50" y="290" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="2" vertex="1">
+                    <mxGeometry x="45" y="460" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="设置读事件 callback&lt;br&gt;handle_task_event" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="2" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50" y="440" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="440"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="2" vertex="1">
+                    <mxGeometry x="45" y="684" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="设置读事件 callback&lt;br&gt;handle_timer" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="2" target="28" edge="1">
+                    <mxGeometry x="0.0133" relative="1" as="geometry">
+                        <mxPoint x="50" y="664" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="664"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value=":Epoll" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="314" y="70" width="100" height="960" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="3" vertex="1">
+                    <mxGeometry x="46" y="100" width="10" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="epoll_create" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;" parent="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="56" y="110" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="76" y="110"/>
+                            <mxPoint x="76" y="160"/>
+                            <mxPoint x="51" y="160"/>
+                        </Array>
+                        <mxPoint x="51" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="3" vertex="1">
+                    <mxGeometry x="46" y="527" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="3" source="31" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-164" y="565" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="3" vertex="1">
+                    <mxGeometry x="46" y="760" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="3" source="34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-164" y="798" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="update_channel: 向 Epoll 注册 timer channel" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="3" target="34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-164.5" y="760" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="创建 Epoll" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" source="2" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="170" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="4" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="246" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value=":Channel" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="70" width="100" height="960" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="17" vertex="1">
+                    <mxGeometry x="46" y="380" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="17" vertex="1">
+                    <mxGeometry x="46" y="599" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="创建 timer_channel" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="17" target="23" edge="1">
+                    <mxGeometry x="-0.0013" relative="1" as="geometry">
+                        <mxPoint x="-350.5" y="599" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="17" source="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-350.5" y="637" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="创建 task_event_channe" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" source="2" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="476" y="450" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="20" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="476" y="526" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="update_channel: 向 Epoll 注册 task_event channel" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="31" edge="1">
+                    <mxGeometry x="-0.0024" relative="1" as="geometry">
+                        <mxPoint x="149.5" y="597" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="EventLoop 创建" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry y="70" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value=":Acceptor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="980" y="70" width="100" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="38" vertex="1">
+                    <mxGeometry x="45" y="400" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Socket 对象&lt;br&gt;1. 设置属性&lt;br&gt;2. bind&lt;br&gt;3. listen" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="38" target="56" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50" y="380" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="Acceptor&lt;br&gt;创建" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="870" y="70" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value=":Socket" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="1170" y="70" width="100" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="44" vertex="1">
+                    <mxGeometry x="44" y="138" width="10" height="62" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="创建 Socket 对象" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="45" edge="1">
+                    <mxGeometry x="0.0054" relative="1" as="geometry">
+                        <mxPoint x="1029" y="208" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="45" target="38" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1029" y="284" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="外部传入 EventLoop 指针" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" edge="1">
+                    <mxGeometry width="60" relative="1" as="geometry">
+                        <mxPoint x="910" y="160" as="sourcePoint"/>
+                        <mxPoint x="1030" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1224" y="221" as="sourcePoint"/>
+                        <mxPoint x="1224" y="250" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1250" y="220"/>
+                            <mxPoint x="1250" y="230"/>
+                            <mxPoint x="1250" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="socket" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="49" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1217" y="-2" relative="1" as="geometry">
+                        <mxPoint x="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="51" value=":Channel" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="1350" y="70" width="100" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="51" vertex="1">
+                    <mxGeometry x="45" y="270" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="创建 channel, 用来接收事件" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="53" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1030" y="340" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="53" target="38" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1030" y="416" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value=":EventLoop" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="1520" y="70" width="100" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="58" vertex="1">
+                    <mxGeometry x="45" y="467" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="update_channel 注册 channel" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="61" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1030" y="537" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="63" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="61" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1029.5" y="584.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="68" value=":Connection" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="981" y="710" width="100" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="68" vertex="1">
+                    <mxGeometry x="49" y="200" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="创建 input_buffer/output_buffer" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="68" target="88" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="54" y="180" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="84" y="180"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="71" value="Connection&lt;br&gt;创建" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="871" y="710" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value=":Socket" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="1171" y="710" width="100" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="外部传入 EventLoop 指针" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" edge="1">
+                    <mxGeometry width="60" relative="1" as="geometry">
+                        <mxPoint x="911" y="800" as="sourcePoint"/>
+                        <mxPoint x="1031" y="800" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="79" value=":Channel" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="710" width="100" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="79" vertex="1">
+                    <mxGeometry x="45" y="274" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="创建 channel, 用来接收事件" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="80" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1031" y="984" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="82" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="80" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1030.5" y="1031.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="87" value="外部移入 Socket &lt;br&gt;(和客户端连接的 socket)" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" edge="1">
+                    <mxGeometry width="60" relative="1" as="geometry">
+                        <mxPoint x="911" y="856" as="sourcePoint"/>
+                        <mxPoint x="1031" y="856" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="90" value=":TcpServer" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="1130" width="100" height="870" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="90" vertex="1">
+                    <mxGeometry x="45" y="311" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="Acceptor 设置连接事件&lt;br&gt;handle_connect" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="90" target="101" edge="1">
+                    <mxGeometry x="0.0133" relative="1" as="geometry">
+                        <mxPoint x="50" y="291" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="291"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="112" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="90" vertex="1">
+                    <mxGeometry x="45" y="630" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="设置 timer 回调&lt;br&gt;handle_timer" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" parent="90" target="112" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50" y="610" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="610"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="91" value=":EventLoop" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="1130" width="100" height="870" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="91" vertex="1">
+                    <mxGeometry x="45" y="110" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="91" vertex="1">
+                    <mxGeometry x="45" y="520" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="TcpServer 创建" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="1120" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="创建 main loop" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="93" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="1240" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="95" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="93" target="90" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="1316" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="96" value=":Acceptor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="1130" width="100" height="870" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="96" vertex="1">
+                    <mxGeometry x="45.5" y="201" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="传入 mainloop, 创建 Acceptor" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="98" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="159.5" y="1331" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="100" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="98" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="159.5" y="1378.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="103" value=":ThreadPool" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="1130" width="100" height="870" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="103" vertex="1">
+                    <mxGeometry x="45" y="410" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="103" vertex="1">
+                    <mxGeometry x="45" y="705" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="创建 ThreadPool, 作为 IO 线程池 (N 个)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="105" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="1540" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="107" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="105" target="90" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="1616" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="110" value="创建 sub loop (N 个)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="109" edge="1">
+                    <mxGeometry x="0.0054" relative="1" as="geometry">
+                        <mxPoint x="160" y="1650" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="111" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="109" target="90" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="1726" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="115" value="sub loop EventLoop::run 作为 task 加入 IO线程池&lt;br&gt;add_task" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="114" edge="1">
+                    <mxGeometry x="0.0018" relative="1" as="geometry">
+                        <mxPoint x="160" y="1835" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="116" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="114" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="159.5" y="1882.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="117" value=":TcpServer" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="main_loop_-&amp;gt;run" style="html=1;verticalAlign=bottom;endArrow=block;" parent="117" target="119" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="50" y="140" as="sourcePoint"/>
+                        <mxPoint x="130" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="156" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="117" vertex="1">
+                    <mxGeometry x="45" y="470" width="10" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="start" style="html=1;verticalAlign=bottom;endArrow=block;" parent="1" target="117" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="80" y="2270" as="sourcePoint"/>
+                        <mxPoint x="150" y="2270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="119" value=":EventLoop&lt;br&gt;(Main)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;" parent="119" vertex="1">
+                    <mxGeometry x="45" y="140" width="10" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value=":Epoll&lt;br&gt;(Main)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="121" vertex="1">
+                    <mxGeometry x="45.5" y="190" width="10" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="epoll_wait" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1.45;entryY=0.763;entryDx=0;entryDy=0;entryPerimeter=0;" parent="121" target="122" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="56" y="210" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="86" y="210"/>
+                            <mxPoint x="86" y="250"/>
+                            <mxPoint x="62" y="250"/>
+                            <mxPoint x="62" y="251"/>
+                        </Array>
+                        <mxPoint x="62" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="123" value="loop" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="122" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="2360" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="124" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="122" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="2436" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="128" value=":Channel&lt;br&gt;(Acceptor)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="128" vertex="1">
+                    <mxGeometry x="45" y="330" width="10" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" value="handle_event(EPOLLIN | EPOLLPRI)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="131" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="2500" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="133" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="131" target="155" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="2775" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="134" value="新客户端连接" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="2430" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="读事件" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="2450" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value=":Acceptor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="136" vertex="1">
+                    <mxGeometry x="45" y="340" width="10" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" value="read_callback&lt;br&gt;handle_connect" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="138" edge="1">
+                    <mxGeometry x="0.0022" relative="1" as="geometry">
+                        <mxPoint x="670" y="2510" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="140" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="138" target="131" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="745" y="2626" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="143" value=":Socket&lt;br&gt;(Acceptor)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="147" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="143" vertex="1">
+                    <mxGeometry x="45" y="350" width="10" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="148" value="accept" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="147" edge="1">
+                    <mxGeometry x="0.0069" relative="1" as="geometry">
+                        <mxPoint x="820" y="2520" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="149" value="返回新连接的客户端的 fd" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="147" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="820" y="2549" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="150" value=":Socket&lt;br&gt;(Connection)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1060" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="152" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="150" vertex="1">
+                    <mxGeometry x="45" y="410" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="153" value="创建客户端连接 Socket 对象" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="152" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="820" y="2580" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="154" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="152" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="820" y="2618" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="157" value="connect_callback_&lt;br&gt;handle_connect" style="html=1;verticalAlign=bottom;endArrow=block;entryX=1;entryY=0;" parent="1" target="156" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="800" y="2640" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="158" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=1;exitY=0.95;" parent="1" source="156" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="800" y="2792" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="159" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1 选择一个 SubLoop&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. SubLoop 作为参数创建Connection&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;3. 绑定 close/error/message/send_complete 事件&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;4. Connection start&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-80" y="2673" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="161" value=":Connection" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1200" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="163" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="161" vertex="1">
+                    <mxGeometry x="45" y="510" width="10" height="73" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="start" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="163" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="2680" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="165" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;entryX=1.4;entryY=0.688;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="163" target="156" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="215" y="2776" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="166" value=":EventLoop&lt;br&gt;(sub loop)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1340" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="166" vertex="1">
+                    <mxGeometry x="46" y="520" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="update_channel" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="1" target="169" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1260" y="2690" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="171" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="169" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1260" y="2738" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="172" value=":Epoll&lt;br&gt;(sub loop)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1470" y="2170" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="175" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="172" vertex="1">
+                    <mxGeometry x="45" y="530" width="10" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="176" value="dispatch" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" parent="172" target="175" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-75" y="530" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="181" value="epoll_ctl, 开始监控新连接的客户端" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="172" vertex="1">
+                    <mxGeometry x="60" y="530" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="177" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;" parent="1" source="175" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1400" y="2730" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="182" value="建立连接&lt;br&gt;在主线程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="2160" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="183" value=":TcpServer" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="3070" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="235" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="183" vertex="1">
+                    <mxGeometry x="45" y="260" width="10" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value=":Connection" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="3070" width="100" height="820" as="geometry"/>
+                </mxCell>
+                <mxCell id="226" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="185" vertex="1">
+                    <mxGeometry x="45" y="240" width="10" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="239" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="185" vertex="1">
+                    <mxGeometry x="195" y="420" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="240" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="185" vertex="1">
+                    <mxGeometry x="45" y="400" width="10" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="241" value="error: handle_close" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="185" target="240" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-95" y="400" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="243" value="handle_close" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="185" target="239" edge="1">
+                    <mxGeometry x="0.0074" relative="1" as="geometry">
+                        <mxPoint x="60" y="420" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="244" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="185" source="239" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="60" y="458" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="245" value="关闭连接" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" parent="185" vertex="1">
+                    <mxGeometry x="230" y="435" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="259" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="185" vertex="1">
+                    <mxGeometry x="45" y="580" width="10" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="187" value=":EventLoop&lt;br&gt;(sub loop)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="3070" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="194" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="187" vertex="1">
+                    <mxGeometry x="45" y="90" width="10" height="700" as="geometry"/>
+                </mxCell>
+                <mxCell id="189" value=":Epoll&lt;br&gt;(sub loop)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="3070" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="196" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="189" vertex="1">
+                    <mxGeometry x="45" y="110" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="195" value="run" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="3240" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="197" value="loop" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="196" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="3180" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="198" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="196" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="3218" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="202" value="epoll_wait" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="3180" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="203" value=":Channel&lt;br&gt;（Connection)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="3070" width="100" height="830" as="geometry"/>
+                </mxCell>
+                <mxCell id="204" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;fillColor=#b0e3e6;strokeColor=#0e8088;" parent="203" vertex="1">
+                    <mxGeometry x="45.5" y="210" width="10" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="254" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;fillColor=#bac8d3;strokeColor=#23445d;" parent="203" vertex="1">
+                    <mxGeometry x="51" y="550" width="10" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="255" value="handle_message" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeWidth=1;" parent="203" target="254" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="56" y="530" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="86" y="530"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="205" value="handle_event" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="204" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="215" y="3280" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="206" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="210.5" y="3850.999999999999" as="targetPoint"/>
+                        <mxPoint x="505.5" y="3850.999999999999" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="227" value="error: handle_error" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="226" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="515" y="3310" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="228" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="226" target="203" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="515" y="3386" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="236" value="handle_error" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="235" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="3330" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="237" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="235" target="185" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="3406" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="238" value="关闭连接" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="3345" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="246" value="和客户端通信: 读事件" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="3070" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="260" value="recv 数据为0" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="259" edge="1">
+                    <mxGeometry x="0.0074" relative="1" as="geometry">
+                        <mxPoint x="520" y="3650" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="261" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;entryX=1.2;entryY=0.391;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="259" target="254" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="530" y="3707" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="242" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="240" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="3537" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="262" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="802" y="3662" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="264" value="handle_close" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="262" edge="1">
+                    <mxGeometry x="0.0074" relative="1" as="geometry">
+                        <mxPoint x="667" y="3662" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="265" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="262" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="3700" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="266" value="关闭连接" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="837" y="3677" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="267" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="658" y="3765" width="10" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="268" value="recv 数据积累, &lt;br&gt;当数据读取完毕回调" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="267" edge="1">
+                    <mxGeometry x="0.0074" relative="1" as="geometry">
+                        <mxPoint x="523" y="3765" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="269" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;entryX=1.3;entryY=0.918;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="267" target="254" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="533" y="3822" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="270" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="805" y="3777" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="271" value="handle_message" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="270" edge="1">
+                    <mxGeometry x="0.0074" relative="1" as="geometry">
+                        <mxPoint x="670" y="3777" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="272" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="270" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="673" y="3815" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="273" value="数据处理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="3782" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="274" value=":TcpServer" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="3065" width="100" height="1155" as="geometry"/>
+                </mxCell>
+                <mxCell id="291" value="send" style="html=1;verticalAlign=bottom;endArrow=block;strokeWidth=1;" parent="274" target="280" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="50" y="135" as="sourcePoint"/>
+                        <mxPoint x="130" y="135" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="278" value="send data" style="html=1;verticalAlign=bottom;endArrow=block;strokeWidth=1;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="1080" y="3170" as="sourcePoint"/>
+                        <mxPoint x="1160" y="3170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="280" value=":Connection" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1290" y="3065" width="100" height="1145" as="geometry"/>
+                </mxCell>
+                <mxCell id="330" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="280">
+                    <mxGeometry x="45" y="500" width="10" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="341" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="280">
+                    <mxGeometry x="45" y="899" width="10" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="296" value=":Channel&lt;br&gt;（Connection)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1480" y="3065" width="100" height="1145" as="geometry"/>
+                </mxCell>
+                <mxCell id="300" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="296" vertex="1">
+                    <mxGeometry x="45" y="625" width="10" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="301" value="更新 channel 写事件" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="300" edge="1">
+                    <mxGeometry x="0.0057" relative="1" as="geometry">
+                        <mxPoint x="1350" y="3690" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="302" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="300" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1350" y="3723" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="303" value=":EventLoop&lt;br&gt;(sub loop)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1654" y="3065" width="100" height="1145" as="geometry"/>
+                </mxCell>
+                <mxCell id="314" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="303" vertex="1">
+                    <mxGeometry x="45" y="160" width="10" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="317" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="303" vertex="1">
+                    <mxGeometry x="50" y="185" width="10" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="318" value="task 加入队列" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeWidth=1;" parent="303" target="317" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="55" y="165" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="85" y="165"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="319" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="303">
+                    <mxGeometry x="50" y="255" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="320" value="write eventfd" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;" edge="1" parent="303">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="56" y="235" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="86" y="235"/>
+                        </Array>
+                        <mxPoint x="56" y="255" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="321" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="303">
+                    <mxGeometry x="45" y="345" width="10" height="685" as="geometry"/>
+                </mxCell>
+                <mxCell id="328" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="303">
+                    <mxGeometry x="40" y="490" width="20" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="305" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="303" vertex="1">
+                    <mxGeometry x="50" y="692" width="10" height="58" as="geometry"/>
+                </mxCell>
+                <mxCell id="339" value="eventfd&amp;nbsp; 触发" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.4;exitY=0.067;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="303" source="323">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="205" y="403" as="sourcePoint"/>
+                        <mxPoint x="56" y="405" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="340" value="socket 写缓冲区非空" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;" edge="1" parent="303">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="201" y="840" as="sourcePoint"/>
+                        <mxPoint x="56" y="840" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="346" value="handle_event&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="303">
+                    <mxGeometry x="0.0015" width="80" relative="1" as="geometry">
+                        <mxPoint x="56" y="445" as="sourcePoint"/>
+                        <mxPoint x="373" y="445" as="targetPoint"/>
+                        <Array as="points"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="306" value="update_channel" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="305" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1350" y="3755" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="307" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="305" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1350" y="3812" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="308" value=":Epoll&lt;br&gt;(sub loop)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="1810" y="3065" width="100" height="1145" as="geometry"/>
+                </mxCell>
+                <mxCell id="312" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeWidth=1;" parent="308" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-100" y="731" as="targetPoint"/>
+                        <mxPoint x="45" y="731" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="323" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="308">
+                    <mxGeometry x="45" y="362" width="10" height="643" as="geometry"/>
+                </mxCell>
+                <mxCell id="310" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" parent="308" vertex="1">
+                    <mxGeometry x="51" y="705" width="10" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="311" value="dispatch" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="310" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1710" y="3770" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="313" value="epoll_ctl" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="1896" y="3768" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="315" value="add_to_task_qeue" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;strokeWidth=1;" parent="1" target="314" edge="1" source="280">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1340" y="3230" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="316" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;strokeWidth=1;" parent="1" source="314" edge="1" target="280">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1340" y="3306" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="322" value="run" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+                    <mxGeometry x="1620" y="3420" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="324" value="loop" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" edge="1" target="323" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1710" y="3427" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="327" value="epoll_wait" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+                    <mxGeometry x="1880" y="3420" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="331" value="执行任务" style="html=1;verticalAlign=bottom;endArrow=block;entryX=1;entryY=0;" edge="1" target="330" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1702.5" y="3565" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="332" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=1;exitY=0.95;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1702.5" y="3844.5" as="targetPoint"/>
+                        <mxPoint x="1345" y="3844.5" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="334" value="send_in_loop" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+                    <mxGeometry x="1250" y="3560" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="335" value="1. 数据加入到 output buffer&#10;2. fd channel 设置写事件&#10;3. 通过 epoll_ctl 更新" style="text;align=left;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+                    <mxGeometry x="1351" y="3600" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="342" value="handle_write" style="html=1;verticalAlign=bottom;endArrow=block;entryX=1;entryY=0;" edge="1" target="341" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1530" y="3963" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="343" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=1;exitY=0.95;" edge="1" source="341" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1530" y="4021" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="344" value=":Channel&lt;br&gt;（task event channel)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" vertex="1" parent="1">
+                    <mxGeometry x="1970" y="3067" width="130" height="1136" as="geometry"/>
+                </mxCell>
+                <mxCell id="345" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeWidth=1;" vertex="1" parent="344">
+                    <mxGeometry x="60" y="420" width="10" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="348" value="1. 从 output buffer 读消息&#10;2. send&#10;" style="text;align=left;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+                    <mxGeometry x="1210" y="3953" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="349" value="handle_write" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="1699" y="3928.5" as="sourcePoint"/>
+                        <mxPoint x="1530.5" y="3928.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="347" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2024" y="3560" as="sourcePoint"/>
+                        <mxPoint x="1714" y="3560" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="350" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1530.5" y="4054" as="sourcePoint"/>
+                        <mxPoint x="1700" y="4054" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="351" value="发送数据" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="1010" y="3070" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
